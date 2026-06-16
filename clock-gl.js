@@ -78,11 +78,11 @@ const ClockGL = (() => {
       for (int i = 0; i < 24; i++) {
         float a = float(i) / 24.0 * TAU;
         vec2 dir = vec2(sin(a), cos(a));
-        float innerR = (mod(float(i), 6.0) == 0.0) ? 0.34 : 0.38;
+        float innerR = (mod(float(i), 6.0) == 0.0) ? 0.22 : 0.24;
         float thickness = (mod(float(i), 6.0) == 0.0) ? 0.004 : 0.002;
-        float d = sdLine(uv, dir * innerR, dir * 0.44, thickness);
+        float d = sdLine(uv, dir * innerR, dir * 0.28, thickness);
         float tick = smoothstep(0.002, 0.0, d);
-        vec3 tickCol = (mod(float(i), 6.0) == 0.0) ? vec3(0.9, 0.85, 0.7) : vec3(0.4, 0.4, 0.45);
+        vec3 tickCol = (mod(float(i), 6.0) == 0.0) ? vec3(0.8, 0.75, 0.6) : vec3(0.3, 0.3, 0.35);
         col = mix(col, tickCol, tick);
       }
 
@@ -90,9 +90,11 @@ const ClockGL = (() => {
       for (int i = 0; i < 60; i++) {
         float a = float(i) / 60.0 * TAU;
         vec2 dir = vec2(sin(a), cos(a));
-        float d = sdLine(uv, dir * 0.42, dir * 0.44, 0.001);
+        float innerR = (mod(float(i), 5.0) == 0.0) ? 0.40 : 0.42;
+        float d = sdLine(uv, dir * innerR, dir * 0.44, 0.001);
         float tick = smoothstep(0.001, 0.0, d);
-        col = mix(col, vec3(0.25, 0.25, 0.3), tick);
+        vec3 tickCol = (mod(float(i), 5.0) == 0.0) ? vec3(0.65, 0.65, 0.7) : vec3(0.45, 0.45, 0.5);
+        col = mix(col, tickCol, tick);
       }
 
       // hour hand angle: 24-hour, one full rotation per day
@@ -106,7 +108,7 @@ const ClockGL = (() => {
 
       // minute hand
       float minAngle = (u_minutes + u_seconds / 60.0) / 60.0 * TAU;
-      float dMin = sdTriangleHand(uv, minAngle, 0.34, 0.008, 0.002);
+      float dMin = sdTriangleHand(uv, minAngle, 0.36, 0.008, 0.002);
       float minMask = smoothstep(0.002, 0.0, dMin);
       col = mix(col, vec3(0.85, 0.85, 0.9), minMask);
       float minGlow = smoothstep(0.025, 0.0, dMin) * 0.1;
@@ -257,7 +259,7 @@ const ClockGL = (() => {
         const x = cxc + Math.sin(a) * labelR;
         const y = cyc - Math.cos(a) * labelR;
         const isMajor = i % 6 === 0;
-        ctx2d.font = isMajor ? 'bold 11px "Courier New", monospace' : '9px "Courier New", monospace';
+        ctx2d.font = isMajor ? 'bold 16px "Courier New", monospace' : '12px "Courier New", monospace';
         ctx2d.textAlign = 'center';
         ctx2d.textBaseline = 'middle';
         ctx2d.fillStyle = isMajor ? 'rgba(210, 200, 180, 0.85)' : 'rgba(150, 150, 170, 0.5)';

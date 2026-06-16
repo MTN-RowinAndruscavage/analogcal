@@ -166,7 +166,7 @@ const MillenniumDial = (() => {
 
       ctx.save();
       ctx.translate(lx, ly);
-      const fontSize = isActive ? 15 : 11;
+      const fontSize = isActive ? 24 : 20;
       ctx.font = `${isActive ? 'bold ' : ''}${fontSize}px 'Courier New', monospace`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';

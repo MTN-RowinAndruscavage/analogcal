@@ -80,14 +80,14 @@ const DayDial = (() => {
 
       // label
       const midA = (a0 + a1) / 2;
-      const labelR = R * 0.72;
+      const labelR = R * 0.8;
       const lx = cx + Math.cos(midA) * labelR;
       const ly = cy + Math.sin(midA) * labelR;
 
       ctx.save();
       ctx.translate(lx, ly);
       ctx.rotate(midA + Math.PI / 2);
-      ctx.font = `${isActive ? 'bold ' : ''}${isActive ? 16 : 13}px 'Courier New', monospace`;
+      ctx.font = `${isActive ? 'bold ' : ''}${isActive ? 20 : 16}px 'Courier New', monospace`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillStyle = isActive ? '#fff' : 'rgba(200, 200, 210, 0.6)';
@@ -98,14 +98,14 @@ const DayDial = (() => {
       const dayDate = new Date(now);
       dayDate.setDate(now.getDate() + (i - dayIndex));
       const dd = dayDate.getDate();
-      const ddR = R * 0.54;
+      const ddR = R * 0.6;
       const ddx = cx + Math.cos(midA) * ddR;
       const ddy = cy + Math.sin(midA) * ddR;
 
       ctx.save();
       ctx.translate(ddx, ddy);
       ctx.rotate(midA + Math.PI / 2);
-      ctx.font = `${isActive ? 'bold ' : ''}${isActive ? 13 : 10}px 'Courier New', monospace`;
+      ctx.font = `${isActive ? 'bold ' : ''}${isActive ? 18 : 14}px 'Courier New', monospace`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillStyle = isActive ? 'rgba(255, 255, 255, 0.7)' : 'rgba(200, 200, 210, 0.35)';

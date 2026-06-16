@@ -95,7 +95,7 @@ const AnnualDial = (() => {
       ctx.save();
       ctx.translate(lx, ly);
       ctx.rotate(midA + Math.PI / 2);
-      ctx.font = `${isActive ? 'bold ' : ''}${isActive ? 14 : 11}px 'Courier New', monospace`;
+      ctx.font = `${isActive ? 'bold ' : ''}${isActive ? 24 : 18}px 'Courier New', monospace`;
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillStyle = isActive ? '#fff' : 'rgba(200, 200, 210, 0.7)';
@@ -149,10 +149,10 @@ const AnnualDial = (() => {
       ctx.save();
       ctx.translate(wx, wy);
       ctx.rotate(a + Math.PI / 2);
-      ctx.font = '9px "Courier New", monospace';
+      ctx.font = '12px "Courier New", monospace';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillStyle = (wk % 4 === 1) ? 'rgba(190, 190, 200, 0.5)' : 'rgba(150, 150, 160, 0.3)';
+      ctx.fillStyle = (wk % 4 === 1) ? 'rgba(200, 200, 210, 0.5)' : 'rgba(190, 190, 200, 0.3)';
       ctx.fillText(wk.toString(), 0, 0);
       ctx.restore();
     }
