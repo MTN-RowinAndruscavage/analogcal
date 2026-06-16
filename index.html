@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analog Calendar Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="dashboard">
+  <div class="dials-row">
+    <div class="dial-container">
+      <h2 id="clock-title">24-Hour Clock</h2>
+      <canvas id="clock-gl" width="500" height="500"></canvas>
+    </div>
+    <div class="dial-container">
+      <h2 id="day-dial-title">Day of Week</h2>
+      <canvas id="day-dial" width="500" height="500"></canvas>
+    </div>
+    <div class="dial-container">
+      <h2 id="annual-title">Annual Calendar</h2>
+      <canvas id="annual-dial" width="500" height="500"></canvas>
+    </div>
+    <div class="dial-container">
+      <h2>Millennium Dial</h2>
+      <canvas id="millennium-dial" width="500" height="500"></canvas>
+    </div>
+  </div>
+  <div id="nixie-bar">
+    <div class="nixie-row">
+      <span class="nixie-label">UTC</span>
+      <div id="nixie-utc" class="nixie-display"></div>
+    </div>
+    <div class="nixie-row">
+      <span class="nixie-label">LOCAL</span>
+      <div id="nixie-local" class="nixie-display"></div>
+    </div>
+  </div>
+</div>
+<script src="clock-gl.js"></script>
+<script src="day-dial.js"></script>
+<script src="annual-dial.js"></script>
+<script src="millennium-dial.js"></script>
+<script src="nixie.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
