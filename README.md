@@ -2,7 +2,7 @@
 
 Clock and calendar displayed in smooth simple analog dials in browser WebGL.
 
-![Analog Calendar Screenshot](https://private-user-images.githubusercontent.com/8740187/608815503-e78c16fe-82be-4ff7-bf33-e0bbd6a26a86.png)
+![Analog Calendar Screenshot](https://repository-images.githubusercontent.com/1271566979/ffcb7aba-fa58-4f54-9877-c33f6825c28a)
 
 ## Elements
 
